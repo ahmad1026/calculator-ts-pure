@@ -21,9 +21,9 @@ export class Calculator {
         if (ops.includes(this.lastInput)) {
           this.rightnum = Number(this.currentValue.split(this.lastInput)[1]);
           this.getResult();
-          this.leftnum = this.result;
+          this.leftnum = Number(this.result.toFixed(14));
           this.lastInput = "";
-          this.currentValue = this.result.toString();
+          this.currentValue = this.result.toFixed(14).toString();
           return this.currentValue;
         }
         this.lastInput = value;
@@ -32,12 +32,11 @@ export class Calculator {
         break;
 
       case ops[5]:
-        if (
-          this.leftnum.toString().includes(".") &&
-          this.rightnum.toString().includes(".")
-        )
+        if (this.currentValue.toString().includes(".")) {
           return this.currentValue;
-        return this.currentValue += value;
+        } else {
+          return (this.currentValue += value);
+        }
       case "AC":
         this.lastInput = "";
         this.currentValue = "";
