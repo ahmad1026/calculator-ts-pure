@@ -5,14 +5,13 @@ export class Calculator {
   private leftnum: number = 0;
   private rightnum: number = 0;
   constructor(
-    private Input: string = "",
     private lastInput: string = "",
     private result: number = 0,
     private currentResult: number = 0,
     public currentValue: string = ""
   ) {}
   actionPressed(value: string): string {
-    const ops: string[] = ["+", "-", "*", "/", "="];
+    const ops: string[] = ["+", "-", "*", "/", "=", "."];
     switch (value) {
       case ops[0]:
       case ops[1]:
@@ -21,15 +20,29 @@ export class Calculator {
       case ops[4]:
         if (ops.includes(this.lastInput)) {
           this.rightnum = Number(this.currentValue.split(this.lastInput)[1]);
-          return this.currentValue + '=' + this.getResult().toString();
+          this.getResult();
+          this.leftnum = this.result;
+          this.lastInput = "";
+          this.currentValue = this.result.toString();
+          return this.currentValue;
         }
         this.lastInput = value;
         this.currentValue += value;
         this.leftnum = Number(this.currentValue.split(this.lastInput)[0]);
         break;
+
+      case ops[5]:
+        if (
+          this.leftnum.toString().includes(".") &&
+          this.rightnum.toString().includes(".")
+        )
+          return this.currentValue;
+        return this.currentValue += value;
       case "AC":
         this.lastInput = "";
         this.currentValue = "";
+        this.leftnum = 0;
+        this.rightnum = 0;
         return "";
       case "Back":
         this.lastInput = "";
@@ -62,6 +75,5 @@ export class Calculator {
       default:
         break;
     }
-    return this.result;
   }
 }

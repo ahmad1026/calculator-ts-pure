@@ -1,6 +1,5 @@
 export class Calculator {
-    constructor(Input = "", lastInput = "", result = 0, currentResult = 0, currentValue = "") {
-        this.Input = Input;
+    constructor(lastInput = "", result = 0, currentResult = 0, currentValue = "") {
         this.lastInput = lastInput;
         this.result = result;
         this.currentResult = currentResult;
@@ -9,7 +8,7 @@ export class Calculator {
         this.rightnum = 0;
     }
     actionPressed(value) {
-        const ops = ["+", "-", "*", "/", "="];
+        const ops = ["+", "-", "*", "/", "=", "."];
         switch (value) {
             case ops[0]:
             case ops[1]:
@@ -18,15 +17,26 @@ export class Calculator {
             case ops[4]:
                 if (ops.includes(this.lastInput)) {
                     this.rightnum = Number(this.currentValue.split(this.lastInput)[1]);
-                    return this.currentValue + '=' + this.getResult().toString();
+                    this.getResult();
+                    this.leftnum = this.result;
+                    this.lastInput = "";
+                    this.currentValue = this.result.toString();
+                    return this.currentValue;
                 }
                 this.lastInput = value;
                 this.currentValue += value;
                 this.leftnum = Number(this.currentValue.split(this.lastInput)[0]);
                 break;
+            case ops[5]:
+                if (this.leftnum.toString().includes(".") &&
+                    this.rightnum.toString().includes("."))
+                    return this.currentValue;
+                return this.currentValue += value;
             case "AC":
                 this.lastInput = "";
                 this.currentValue = "";
+                this.leftnum = 0;
+                this.rightnum = 0;
                 return "";
             case "Back":
                 this.lastInput = "";
@@ -57,6 +67,5 @@ export class Calculator {
             default:
                 break;
         }
-        return this.result;
     }
 }
