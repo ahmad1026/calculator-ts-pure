@@ -1,0 +1,105 @@
+h3 {
+  margin: 0px;
+}
+
+body {
+  background-color: #868481;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  min-width: 400px;
+  max-width: 471px;
+  border: 1px solid gray;
+  /* height: 400px; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #edecea;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "Sofia", sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+}
+
+.header input {
+  text-align: right;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 16px 8px;
+  background-color: #424242;
+  font-size: 44px;
+  box-sizing: border-box;
+  color: #edf0f1;
+}
+.buttons {
+  width: 100%;
+  /* border: 1px solid gray; */
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 50px;
+  border: 4px solid #edecea;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.button {
+  /* width: 100%; */
+  min-width: 80px;
+  height: 100%;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 2.6;
+  background-color: #f1f1f1;
+  font-weight: bold;
+
+  background: hsla(0, 0%, 81%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 81%, 1) 0%,
+    hsla(0, 0%, 95%, 1) 20%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(0, 0%, 81%, 1) 0%,
+    hsla(0, 0%, 95%, 1) 20%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(0, 0%, 81%, 1) 0%,
+    hsla(0, 0%, 95%, 1) 20%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CFCFCF", endColorstr="#F1F1F1", GradientType=1 );
+}
+
+.button:active {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  background: none;
+  transform: translateY(2px);
+}
