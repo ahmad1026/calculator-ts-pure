@@ -18,9 +18,9 @@ export class Calculator {
                 if (ops.includes(this.lastInput)) {
                     this.rightnum = Number(this.currentValue.split(this.lastInput)[1]);
                     this.getResult();
-                    this.leftnum = Number(this.result.toFixed(14));
+                    this.leftnum = this.result;
                     this.lastInput = "";
-                    this.currentValue = this.result.toFixed(14).toString();
+                    this.currentValue = this.result.toString();
                     return this.currentValue;
                 }
                 this.lastInput = value;

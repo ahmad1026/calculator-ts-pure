@@ -12,6 +12,6 @@ function handleClick(event: Event) {
   const { target } = event;
   if (target) {
     const value = (target as HTMLDivElement).innerHTML;
-    inputEle.value = calculator.actionPressed(value).slice(0,15);
+    inputEle.value = calculator.actionPressed(value);
   }
 }
