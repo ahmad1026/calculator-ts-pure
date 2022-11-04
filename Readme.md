@@ -7,7 +7,8 @@
 
 # Prview
 
-you can see in <strong><a href="https://ahmad1026.github.io/calculator-ts-pure/">click me</a></strong>
+you can see in <strong><a href="https://ahmad1026.github.io/calculator-ts-pure/"
+target="_blank">click me</a></strong>
 
 <img src="https://raw.githubusercontent.com/ahmad1026/calculator-ts-pure/master/Untitled%20Project.gif" alt="preview"></img>
 
