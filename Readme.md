@@ -20,6 +20,11 @@ $ npm start
 ```
 
 
+# Prview
+
+<img src="https://raw.githubusercontent.com/ahmad1026/calculator-ts-pure/master/Untitled%20Project.gif" alt="preview"></img>
+
+
 
 
 
